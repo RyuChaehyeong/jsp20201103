@@ -1,3 +1,7 @@
+<%@page import="java.util.Map.Entry"%>
+<%@page import="java.util.HashMap"%>
+<%@page import="java.util.Map"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -14,83 +18,29 @@
 </head>
 <body>
 <%
-for(int i = 0; i<5;i++ ){
-%>
-
-<h1>Lorem ipsum dolor.</h1>
-
-<%
-}
-%>
-
-<%
-java.util.List<String> list = new java.util.ArrayList<>();
-list.add("java");
-list.add("jsp");
-list.add("spring");
-list.add("dbms");
+Map<String, String> map = new HashMap<>();
+map.put("java", "script");
+map.put("html", "css");
+map.put("dbms", "oracle");
+map.put("servlet", "jsp");
+map.put("jquery", "react");
 %>
 
 <ul>
 <%
-for(String item: list) {
-%>	
-<li>
-<% out.print(item);%>
-</li>
+for (Entry<String, String> entry : map.entrySet()) {	
+%>
+	<li>
+	<%
+	out.print(entry.getKey());
+	out.print(":");
+	out.print(entry.getValue());
+	%>
+	
+	</li>
 <%
-}
-%>	
+}  
+%>
 </ul>
-
-<%
-boolean danger = true;
-%>
-<%
-if(danger) {
-%>
-<h1 class = "text-danger">DANGER!!!!!</h1>
-<%
-} else {
-%>
-<h1 class="text-info">Info~~~~~</h1>
-<%
-}
-%>
-
-<%
-for(int i = 0 ; i < 5 ; i++) {
-	for (int j = 0 ; j <=i ; j++) {
-%>
-	*
-<%
-	}
-%>	
-	<br>
-<%
-}
-%>	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
 </html>

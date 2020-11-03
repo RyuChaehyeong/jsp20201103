@@ -1,4 +1,3 @@
-<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -13,63 +12,70 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-for(int i = 0; i<5;i++ ){
-%>
-
 <h1>Lorem ipsum dolor.</h1>
 
 <%
-}
+String name = "java"; /* 변수 선언하여 값을 넣음 */
 %>
 
+
+<%= name %> <!-- 연산식, 결과 out.print의 파라미터로 들어감 -->
+
+
+<hr>
 <%
-java.util.List<String> list = new java.util.ArrayList<>();
+java.util.List<String> list = new java.util.ArrayList<>(); 
 list.add("java");
+list.add("html");
+list.add("css");
+list.add("jquery");
 list.add("jsp");
-list.add("spring");
-list.add("dbms");
 %>
 
 <ul>
 <%
-for(String item: list) {
-%>	
-<li>
-<% out.print(item);%>
-</li>
-<%
+for(String item : list) {
+
+%>
+<li><%= item %></li>
+<% 
 }
-%>	
+
+%>
 </ul>
 
+<hr>
+
 <%
-boolean danger = true;
+String status_danger = "danger";
+String status_primary ="primary";
+String status_success = "success";
+
+int status = 1;
+
+if(status == 0){
+	
 %>
-<%
-if(danger) {
-%>
-<h1 class = "text-danger">DANGER!!!!!</h1>
+	<h1 class="text-<%=status_danger%>">Lorem ipsum dolor.</h1>
 <%
 } else {
 %>
-<h1 class="text-info">Info~~~~~</h1>
+	<h1 class="text-<%=status_primary%>">Lorem ipsum dolor.</h1>
+
 <%
 }
 %>
 
-<%
-for(int i = 0 ; i < 5 ; i++) {
-	for (int j = 0 ; j <=i ; j++) {
 %>
-	*
-<%
-	}
-%>	
-	<br>
-<%
-}
-%>	
+<h1 class="text-<%=status%>">Lorem ipsum dolor.</h1>
+<!-- 값이 바뀌면 상태가 바뀜 동적!! -->
+
+
+
+
+
+
+
 
 
 

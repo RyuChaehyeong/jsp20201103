@@ -1,10 +1,24 @@
-<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%! 
+int i = 3;
+static int j = 10;
+//위치는 클래스 같이 위쪽에 존재하는 것이 낫다
+int k = 20;
+
+void mymethod(){
+	System.out.println("hello");
+}
+
+static void mymethod2(){
+	System.out.println("hello static");
+}
+%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -13,84 +27,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-for(int i = 0; i<5;i++ ){
-%>
 
 <h1>Lorem ipsum dolor.</h1>
-
-<%
-}
-%>
-
-<%
-java.util.List<String> list = new java.util.ArrayList<>();
-list.add("java");
-list.add("jsp");
-list.add("spring");
-list.add("dbms");
-%>
-
-<ul>
-<%
-for(String item: list) {
-%>	
-<li>
-<% out.print(item);%>
-</li>
-<%
-}
-%>	
-</ul>
-
-<%
-boolean danger = true;
-%>
-<%
-if(danger) {
-%>
-<h1 class = "text-danger">DANGER!!!!!</h1>
-<%
-} else {
-%>
-<h1 class="text-info">Info~~~~~</h1>
-<%
-}
-%>
-
-<%
-for(int i = 0 ; i < 5 ; i++) {
-	for (int j = 0 ; j <=i ; j++) {
-%>
-	*
-<%
-	}
-%>	
-	<br>
-<%
-}
-%>	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<% this.mymethod();%> <!-- 인스턴스 메소드니까 this.를 붙여도 되고 안붙여도 대고 -->
+<% mymethod2(); %>
 </body>
 </html>

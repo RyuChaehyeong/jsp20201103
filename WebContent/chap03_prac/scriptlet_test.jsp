@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -14,17 +15,17 @@
 </head>
 <body>
 <%
-for(int i = 0; i<5;i++ ){
+for(int i = 0; i <5; i++) {
 %>
 
 <h1>Lorem ipsum dolor.</h1>
 
 <%
 }
-%>
+%>	
 
 <%
-java.util.List<String> list = new java.util.ArrayList<>();
+List<String> list = new ArrayList<>();
 list.add("java");
 list.add("jsp");
 list.add("spring");
@@ -33,63 +34,15 @@ list.add("dbms");
 
 <ul>
 <%
-for(String item: list) {
-%>	
+for(String item :  list) {
+%>
 <li>
-<% out.print(item);%>
+<%= item %>
 </li>
 <%
 }
 %>	
 </ul>
-
-<%
-boolean danger = true;
-%>
-<%
-if(danger) {
-%>
-<h1 class = "text-danger">DANGER!!!!!</h1>
-<%
-} else {
-%>
-<h1 class="text-info">Info~~~~~</h1>
-<%
-}
-%>
-
-<%
-for(int i = 0 ; i < 5 ; i++) {
-	for (int j = 0 ; j <=i ; j++) {
-%>
-	*
-<%
-	}
-%>	
-	<br>
-<%
-}
-%>	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </body>

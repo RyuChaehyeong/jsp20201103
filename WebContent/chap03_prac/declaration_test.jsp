@@ -1,6 +1,10 @@
-<%@page import="java.util.List"%>
+<%@page import="java.util.HashSet"%>
+<%@page import="java.util.Set"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%!
+    int i = 3;
+    %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,83 +18,11 @@
 </head>
 <body>
 <%
-for(int i = 0; i<5;i++ ){
+int i = 10;
 %>
 
-<h1>Lorem ipsum dolor.</h1>
+<%= i %> <br>
 
-<%
-}
-%>
-
-<%
-java.util.List<String> list = new java.util.ArrayList<>();
-list.add("java");
-list.add("jsp");
-list.add("spring");
-list.add("dbms");
-%>
-
-<ul>
-<%
-for(String item: list) {
-%>	
-<li>
-<% out.print(item);%>
-</li>
-<%
-}
-%>	
-</ul>
-
-<%
-boolean danger = true;
-%>
-<%
-if(danger) {
-%>
-<h1 class = "text-danger">DANGER!!!!!</h1>
-<%
-} else {
-%>
-<h1 class="text-info">Info~~~~~</h1>
-<%
-}
-%>
-
-<%
-for(int i = 0 ; i < 5 ; i++) {
-	for (int j = 0 ; j <=i ; j++) {
-%>
-	*
-<%
-	}
-%>	
-	<br>
-<%
-}
-%>	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<%= this.i %>
 </body>
 </html>

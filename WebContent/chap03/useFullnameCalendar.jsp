@@ -1,10 +1,9 @@
-<%@page import="java.util.ArrayList"%>
-<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
+<title>Calendar 클래스 사용</title>
 <meta charset="UTF-8">
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -15,35 +14,12 @@
 </head>
 <body>
 <%
-for(int i = 0; i <5; i++) {
+	java.util.Calendar cal = java.util.Calendar.getInstance();
 %>
 
-<h1>Lorem ipsum dolor.</h1>
-
-<%
-}
-%>	
-
-<%
-List<String> list = new ArrayList<>();
-list.add("java");
-list.add("jsp");
-list.add("spring");
-list.add("dbms");
-%>
-
-<ul>
-<%
-for(String item :  list) {
-%>
-<li>
-<%= item %>
-</li>
-<%
-}
-%>	
-</ul>
-
-
+오늘은 
+	<%=cal.get(java.util.Calendar.YEAR) %> 년
+	<%=cal.get(java.util.Calendar.MONTH)+1 %> 월
+	<%=cal.get(java.util.Calendar.DATE) %> 일
 </body>
 </html>

@@ -1,8 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"%>
+<%@ page import="java.util.Date" %>
+<%
+	Date now = new Date();
+%>
+
 <!DOCTYPE html>
 <html>
-<head>
+<head> <title>현재시간</title>
 <meta charset="UTF-8">
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -12,18 +16,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-boolean danger = false;
-
-if(danger) {
-%>
-	<h1 class="text-danger">Danger!!!</h1>
-<%
-} else {	
-%>	
-	<h1 class="text-info">Information</h1>
-<%
-}
-%>
+현재시각: <%= now %>
 </body>
 </html>

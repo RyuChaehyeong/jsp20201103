@@ -1,0 +1,37 @@
+<%@page import="java.util.*"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+ <% request.setCharacterEncoding("utf-8"); %>
+ 
+ <%
+ List<String> list = new ArrayList<>();
+ if(request.getParameter("cur").equals("kid")) {
+	 list.add("뽀로로1");
+	 list.add("뽀로로2");
+	 list.add("뽀로로3");
+ } else {
+	 list.add("어벤저스1");
+	 list.add("어벤저스2");
+	 list.add("어벤저스3");
+ }
+ %>
+
+<h1>contents</h1>
+<div class="card-deck">
+<%
+	for(String item : list) {
+%>
+	<div class="card">
+		<div class="card-body">
+			<h5 class="card-title">
+				<%= item %>
+			</h5>
+		</div>
+	</div>
+<%
+	}
+%>		
+
+
+
+</div>

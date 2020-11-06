@@ -15,7 +15,6 @@
 	 list.add("어벤저스3");
  }
  %>
-
 <h1>contents</h1>
 <div class="card-deck">
 <%
@@ -30,8 +29,5 @@
 	</div>
 <%
 	}
-%>		
-
-
-
+%>
 </div>

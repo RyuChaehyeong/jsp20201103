@@ -1,24 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
-<% request.setCharacterEncoding("utf-8"); %>
-<%
-/*
-Object o = request.getAttribute("member");
-System.out.println("fw:" + o);
-*/
-%>
-<jsp:useBean id="member" 
-             class="chap08.member.MemberInfo" scope="request" />
-<%
-/*
-chap08.member.MemberInfo member 
-    = (chap08.member.MemberInfo) request.getAttribute("member");
-*/
-%>
-<%
-System.out.println("fw:" + member);
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,6 +12,12 @@ System.out.println("fw:" + member);
 <title>Insert title here</title>
 </head>
 <body>
-안뇽
+<form action="javaBeanEx7View.jsp">
+이름: <input type="text" name="carName" id="" /> <br />
+속도: <input type="number" name="carSpeed" id="" /> <br />
+<br />
+<input type="submit" value="등록" />
+
+</form>
 </body>
 </html>

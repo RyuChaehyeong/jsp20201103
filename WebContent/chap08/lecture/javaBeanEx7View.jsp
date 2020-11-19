@@ -1,24 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
-<% request.setCharacterEncoding("utf-8"); %>
+<jsp:useBean id="car" class="chap08.Car"/>
 <%
-/*
-Object o = request.getAttribute("member");
-System.out.println("fw:" + o);
+//원래는 이렇게 했지.
+/*car.setName(request.getParameter("carName"));
+car.setSpeed(Integer.valueOf(request.getParameter("carSpeed")));
 */
+//아래서 java bean을 사용한다면?
 %>
-<jsp:useBean id="member" 
-             class="chap08.member.MemberInfo" scope="request" />
-<%
-/*
-chap08.member.MemberInfo member 
-    = (chap08.member.MemberInfo) request.getAttribute("member");
-*/
-%>
-<%
-System.out.println("fw:" + member);
-%>
+<jsp:setProperty name="car" property="name" param="carName"/>
+<br />
+파라미터로 얻어올 땐 value대신 param attr로 <br />
+<jsp:setProperty name="car" property="speed" param="carSpeed"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,6 +24,7 @@ System.out.println("fw:" + member);
 <title>Insert title here</title>
 </head>
 <body>
-안뇽
+<jsp:getProperty property ="name" name="car"/> <br />
+<jsp:getProperty property="speed" name="car"/>
 </body>
 </html>

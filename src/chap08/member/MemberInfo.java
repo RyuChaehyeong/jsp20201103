@@ -6,8 +6,9 @@ public class MemberInfo {
 	private String id;
 	private String password;
 	private String name;
-	private Date registreDate;
+	private Date registerDate;
 	private String email;
+	
 	public String getId() {
 		return id;
 	}
@@ -26,11 +27,11 @@ public class MemberInfo {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Date getRegistreDate() {
-		return registreDate;
+	public Date getRegisterDate() {
+		return registerDate;
 	}
-	public void setRegistreDate(Date registreDate) {
-		this.registreDate = registreDate;
+	public void setRegisterDate(Date registerDate) {
+		this.registerDate = registerDate;
 	}
 	public String getEmail() {
 		return email;
@@ -39,6 +40,6 @@ public class MemberInfo {
 		this.email = email;
 	}
 	
-	 //##method가 있어서 ##property가 있다.
+	
 	
 }

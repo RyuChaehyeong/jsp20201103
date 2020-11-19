@@ -4,9 +4,9 @@
 <% request.setCharacterEncoding("utf-8"); %>
 <jsp:useBean id="member" 
              class="chap08.member.MemberInfo" scope="request" />
+             scope에 해당 attr이 없으면 member attr을 만듦
 <%
-Object o = request.getAttribute("member");
-System.out.println(o);
-
+member.setId("madvirus");
+member.setName("최범균");
 %>
-<jsp:forward page="javaBeanEx4Forward.jsp" />
+<jsp:forward page = "useObject.jsp"/>

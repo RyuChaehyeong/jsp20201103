@@ -1,24 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
-<% request.setCharacterEncoding("utf-8"); %>
-<%
-/*
-Object o = request.getAttribute("member");
-System.out.println("fw:" + o);
-*/
-%>
-<jsp:useBean id="member" 
-             class="chap08.member.MemberInfo" scope="request" />
-<%
-/*
-chap08.member.MemberInfo member 
-    = (chap08.member.MemberInfo) request.getAttribute("member");
-*/
-%>
-<%
-System.out.println("fw:" + member);
-%>
+
+<jsp:useBean id="member" class="chap08.member.MemberInfo" scope="request"/>
+makeObject 코드랑 똑같은 request attr에 member가 있어서 안만들고 꺼내서 씀 <br /><br />
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,6 +15,6 @@ System.out.println("fw:" + member);
 <title>Insert title here</title>
 </head>
 <body>
-안뇽
+<%= member.getName() %> (<%= member.getId() %>) 횐님
 </body>
 </html>

@@ -1,24 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
-<% request.setCharacterEncoding("utf-8"); %>
-<%
-/*
-Object o = request.getAttribute("member");
-System.out.println("fw:" + o);
-*/
-%>
-<jsp:useBean id="member" 
-             class="chap08.member.MemberInfo" scope="request" />
-<%
-/*
-chap08.member.MemberInfo member 
-    = (chap08.member.MemberInfo) request.getAttribute("member");
-*/
-%>
-<%
-System.out.println("fw:" + member);
-%>
+<jsp:useBean id="car" class = "chap08.Car"/>
+<!-- 
+<jsp:setProperty name = "car" property="name" param = "name"/>
+<jsp:setProperty name = "car" property="speed" param = "speed"/>
+
+<jsp:setProperty name = "car" property="name"/>
+<jsp:setProperty name = "car" property="speed"/>
+
+ -->
+ <jsp:setProperty name = "car" property="*"/>
+ 
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,6 +23,7 @@ System.out.println("fw:" + member);
 <title>Insert title here</title>
 </head>
 <body>
-안뇽
+<jsp:getProperty property="name" name="car"/> <br />
+<jsp:getProperty property="speed" name="car"/>
 </body>
 </html>

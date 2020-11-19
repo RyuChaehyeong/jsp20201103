@@ -1,24 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
-<% request.setCharacterEncoding("utf-8"); %>
-<%
-/*
-Object o = request.getAttribute("member");
-System.out.println("fw:" + o);
-*/
-%>
-<jsp:useBean id="member" 
-             class="chap08.member.MemberInfo" scope="request" />
-<%
-/*
-chap08.member.MemberInfo member 
-    = (chap08.member.MemberInfo) request.getAttribute("member");
-*/
-%>
-<%
-System.out.println("fw:" + member);
-%>
+<jsp:useBean id="car" class="chap08.Car"></jsp:useBean> 페이지의 attr로 넣어놓음
+<jsp:setProperty name = "car" property = "speed" value = "100"/>
+
+빈의 id값을 똑같이
+value에는 integer로 변환될 수 있는 값을 넣어주어야 한다. <br />
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,6 +18,13 @@ System.out.println("fw:" + member);
 <title>Insert title here</title>
 </head>
 <body>
-안뇽
+<%= car.getSpeed()%> <br />
+프로퍼티 얻어오는 액션태그 <br />
+<jsp:getProperty property="speed" name="car"/>
+<br />
+
+<jsp:getProperty property="stop" name = "car"/>
+<br />
+얻어오는 것 가능!
 </body>
 </html>

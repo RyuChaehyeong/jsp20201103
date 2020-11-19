@@ -1,24 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
-<% request.setCharacterEncoding("utf-8"); %>
+<jsp:useBean id="car" class="chap08.Car"></jsp:useBean> 
 <%
-/*
-Object o = request.getAttribute("member");
-System.out.println("fw:" + o);
-*/
+//car.setName("kia"); 같은 일을 하는 action tag
 %>
-<jsp:useBean id="member" 
-             class="chap08.member.MemberInfo" scope="request" />
-<%
-/*
-chap08.member.MemberInfo member 
-    = (chap08.member.MemberInfo) request.getAttribute("member");
-*/
-%>
-<%
-System.out.println("fw:" + member);
-%>
+<jsp:setProperty name="car" property="name" value = "kia"/>
+
+
+<br />
+<br />
+
+<jsp:setProperty name="car" property="speed" value = "90"/>
+<jsp:setProperty name="car" property="stop" value = "false"/>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,6 +27,7 @@ System.out.println("fw:" + member);
 <title>Insert title here</title>
 </head>
 <body>
-안뇽
+<%= car.getName() %> <br />
+<%= car.getSpeed() %>
 </body>
 </html>

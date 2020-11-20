@@ -43,6 +43,6 @@ ${car2 }
 
 <br />
 ${car3 }
-<!-- car3이름 붙여서 넣어놓은 attr이 없음 -->
+<!-- car3이름 붙여서 넣어놓은 attr이 없음, car3객체는 request에 car라는 이름으로 setattr함 -->
 </body>
 </html>

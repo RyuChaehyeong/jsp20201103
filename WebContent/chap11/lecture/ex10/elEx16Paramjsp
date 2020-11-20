@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<%= request.getParameter("name") %>
+<hr>
+${param }
+<br/>
+param이라는 객체 제공
+param.input name을 써도되고 네모괄호 안에 큰따옴표안에 input name을 써도된다.
+${param.name } <br/>
+${param.["name"] } <br/>
+
+</body>
+</html>

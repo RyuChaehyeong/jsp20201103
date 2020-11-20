@@ -16,6 +16,10 @@
 </head>
 <body>
 <%= pageContext %> <br />
+pageContext는 객체 자체, pageContext type이다. api들어가보면
+get+8개의 기본객체 얻어오는 메소드가 있다.
+get을 빼면 걔네를 property라고 생각하고 아래와 같은 작성할 수 있다.
+<%= pageContext %> <br />
 ${pageContext.request } br
 pageContext의 method 중에 getRequest있다. <br />
 pageContext를 javaBean인 것 처럼! <br />

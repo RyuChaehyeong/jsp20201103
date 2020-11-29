@@ -2,10 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <% request.setCharacterEncoding("utf-8"); %>
-<%
-String[] strs = {"ab", "cd","ef","gh"};
-pageContext.setAttribute("list", strs);
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,17 +13,15 @@ pageContext.setAttribute("list", strs);
 <title>Insert title here</title>
 </head>
 <body>
-${list[0] } <br />
-${list[1] } <br />
-${list[2] } <br />
-${list[3] } <br />
-${list[4] } <br />
+<%= request.getParameter("name") %>
 
-${list["0"] } <br />
-${list["1"] } <br />
-${list["2"] } <br />
-${list["3"] } <br />
-${list["4"] } <br />
+<hr />
+
+${param }
+
+<br />
+${param.name } <br />
+${param["name"] } <br />
 
 </body>
 </html>

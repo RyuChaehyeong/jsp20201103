@@ -32,13 +32,14 @@ request.setAttribute("myAttr2", "my Value2!!!!!!");
 <hr>
 1. myAttr1은 page랑 request영역에 있음 <br/>
 ${myAttr1 } <br />
-page부터 찾기때문에 페이지거만 나타낸다.
+page부터 찾기때문에 페이지에 있는 attr만 나타낸다.
 <hr>
-2. my attr1은 page에 하나밖에 없어서 scope map으로 안찾아도 되지만 그냥 함 <br>
-scope map이름 쓰고 대괄호로 안에 큰따옴표로 attr이름을 감싸서 넣음
+2. my attr1은 page에 하나밖에 없지만 attr이름에 띄어쓰기가 있어서 <br />
+scope map이름 쓰고 대괄호로 안에 큰따옴표로 attr이름을 감싸서 넣음 <br />
+${"my attr1" } <br /> 이렇게 하면 그냥 "my attr1" 이 출력된다. <br />
 ${pageScope["my attr1"] } <br />
 <hr>
-3. myAttr2는 request영역에만 존재 여기선 scope map으로 안찾앗지만 request에서 잘 찾아서 꺼내옴 <br>
+3. myAttr2는 request영역에만 존재  request에서 잘 찾아서 꺼내옴 <br>
 ${myAttr2 } <br />
 <hr>
 4. 1번에서 못찾아온 request영역의 myAttr1을 찾기 위해 scope map이름 써줌 <br>

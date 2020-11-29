@@ -9,6 +9,11 @@
 <body>
 원래는 request.getParameter로 받아야 하지만
 11개의 객체에 param이 있어서 param.indexname으로 받아올 수 있다.
+
+이름: <%= request.getParameter("name") %>
+암호: <%= request.getParameter("password") %>
+이메일: <%= request.getParameter("email") %>
+
 이름 : ${param.name } <br />
 암호 : ${param.password } <br />
 이메일 : ${param.email } <br />

@@ -7,6 +7,7 @@ Map<String, String> map = new HashMap<>();
 map.put("a","java");
 map.put("b", "html");
 map.put("c", "css");
+
 //property로 쓸 수 없게 map의 키가 숫자로 시작하거나, 키워드이거나, 띄어쓰기가 있거나
 map.put("3", "servlet");
 map.put("class", "spring");
@@ -32,7 +33,10 @@ ${mymap.a } <br />
 ${mymap.b } <br />
 ${mymap.c } <br />
 <hr />
-
+${mymap["a"] } <br />
+${mymap["b"] } <br />
+${mymap["c"] } <br />
+<hr />
 ${mymap["3"] } <br />
 ${mymap["class"] } <br />
 ${mymap["my key"] } <br />
@@ -41,9 +45,11 @@ ${mymap['3'] } <br />
 ${mymap['class'] } <br />
 ${mymap['my key'] } <br />
 <hr />
+
 ${mymap[a] } <br />
 ${mymap[b] } <br />
 ${mymap[c] } <br />
+
 따옴표 안쓰면 b라는 attr를 페이지영역에서 찾음
 map에서 value 꺼낼때 써야댐
 </body>

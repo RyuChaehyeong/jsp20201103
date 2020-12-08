@@ -12,9 +12,9 @@ String sql = "SELECT ename FROM employee "
         + "WHERE dno = ? AND ename LIKE ? ";
 
 Class.forName("oracle.jdbc.driver.OracleDriver");
-String url = "jdbc:oracle:thin:@localhost:1521:orcl";
-String id = "c##mydbms";
-String pw = "admin";
+String url = "jdbc:oracle:thin:@mydb501_high?TNS_ADMIN=C:\\Users\\fluid\\Documents\\Wallet_mydb501";
+String id = "mydb17";
+String pw = "adminAdmin12";
 
 Connection con = DriverManager.getConnection(url, id, pw);
 
